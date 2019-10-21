@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class CustomNetworkManager : NetworkManager
 {
-    CustomNetworkDiscovery networkDiscovery;
+    public CustomNetworkDiscovery networkDiscovery;
     // Start is called before the first frame update
     public void StartHosting()
     {
