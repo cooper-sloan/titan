@@ -14,8 +14,8 @@ public class Master : MonoBehaviour
         if (XRDevice.isPresent){
             // enable vr player
             mobileUI.SetActive(false);
-            networkManager.StartHosting();
             vrPlayer.SetActive(true);
+            networkManager.StartHosting();
         } else{
             // enable mobile player
             mobilePlayer.SetActive(true);

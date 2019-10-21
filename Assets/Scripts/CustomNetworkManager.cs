@@ -10,13 +10,15 @@ public class CustomNetworkManager : NetworkManager
     public void StartHosting()
     {
         Debug.Log("Start hosting!");
+        networkDiscovery.Initialize();
         networkDiscovery.StartAsServer();
-        base.StartHost();   
+        base.StartHost();
     }
 
     public void StartClientConnnection()
     {
         Debug.Log("Start client!");
+        networkDiscovery.Initialize();
         networkDiscovery.StartAsClient();
     }
 
