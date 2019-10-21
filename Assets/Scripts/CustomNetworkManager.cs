@@ -5,17 +5,19 @@ using UnityEngine.Networking;
 
 public class CustomNetworkManager : NetworkManager
 {
+    CustomNetworkDiscovery networkDiscovery;
     // Start is called before the first frame update
     public void StartHosting()
     {
         Debug.Log("Start hosting!");
+        networkDiscovery.StartAsServer();
         base.StartHost();   
     }
 
     public void StartClientConnnection()
     {
         Debug.Log("Start client!");
-        base.StartClient();
+        networkDiscovery.StartAsClient();
     }
 
     public void StartServerOnly()
