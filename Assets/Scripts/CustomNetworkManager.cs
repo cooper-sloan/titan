@@ -24,5 +24,18 @@ public class CustomNetworkManager : NetworkManager
         base.StartServer();
     }
 
+    // Client callbacks
+    public override void OnClientConnect(NetworkConnection conn)
+    {
+        base.OnClientConnect(conn);
+        Debug.Log("Connected successfully to server, now to set up other stuff for the client...");
+    }
+
+    // Server callbacks
+    public override void OnServerConnect(NetworkConnection conn)
+    {
+        Debug.Log("A client connected to the server: " + conn);
+    }
+
 
 }
