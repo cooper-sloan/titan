@@ -8,7 +8,7 @@ public class Master : MonoBehaviour
     public CustomNetworkManager networkManager;
     public GameObject mobileUI;
     public GameObject vrPlayer;
-    public GameObject mobilePlayer;
+    public GameObject mobileMenuCamera;
 
     void Awake(){
         if (XRDevice.isPresent){
@@ -16,7 +16,7 @@ public class Master : MonoBehaviour
             vrPlayer.SetActive(true);
         } else{
             mobileUI.SetActive(true);
-            GameObject.Find("MobileMenuCamera").SetActive(true);
+            mobileMenuCamera.SetActive(true);
         }
     }
     void Start(){

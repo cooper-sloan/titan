@@ -1200,7 +1200,7 @@ MonoBehaviour:
   networkManager: {fileID: 1529210354}
   mobileUI: {fileID: 366837814}
   vrPlayer: {fileID: 411433794}
-  mobilePlayer: {fileID: 0}
+  mobileMenuCamera: {fileID: 1582653412}
 --- !u!1 &1041803390
 GameObject:
   m_ObjectHideFlags: 0
