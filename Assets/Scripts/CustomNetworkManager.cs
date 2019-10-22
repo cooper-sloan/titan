@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.XR;
 
 public class CustomNetworkManager : NetworkManager
 {
     public CustomNetworkDiscovery networkDiscovery;
+    public GameObject vrPlayer;
+    public GameObject mobilePlayer;
     // Start is called before the first frame update
     public void StartHosting()
     {
@@ -15,7 +18,7 @@ public class CustomNetworkManager : NetworkManager
         base.StartHost();
     }
 
-    public void StartClientConnnection()
+    public void StartClientConnection()
     {
         Debug.Log("Start client!");
         networkDiscovery.Initialize();
@@ -39,6 +42,15 @@ public class CustomNetworkManager : NetworkManager
     public override void OnServerConnect(NetworkConnection conn)
     {
         Debug.Log("A client connected to the server: " + conn);
+    }
+
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
+        if (XRDevice.isPresent){
+            NetworkServer.AddPlayerForConnection(conn, vrPlayer, playerControllerId);
+        } else{
+            var player = (GameObject)GameObject.Instantiate(mobilePlayer, Vector3.zero, Quaternion.identity);
+            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        }
     }
 
 

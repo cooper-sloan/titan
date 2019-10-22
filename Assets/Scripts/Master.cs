@@ -13,16 +13,15 @@ public class Master : MonoBehaviour
     void Awake(){
         if (XRDevice.isPresent){
             // enable vr player
-            mobileUI.SetActive(false);
             vrPlayer.SetActive(true);
         } else{
-            // enable mobile player
-            mobilePlayer.SetActive(true);
+            mobileUI.SetActive(true);
+            GameObject.Find("MobileMenuCamera").SetActive(true);
         }
     }
     void Start(){
         if (XRDevice.isPresent){
-            networkManager.StartClientConnnection();
+            networkManager.StartClientConnection();
         }
     }
 }
