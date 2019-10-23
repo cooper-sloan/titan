@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -9,6 +10,15 @@ public class CustomNetworkManager : NetworkManager
     public CustomNetworkDiscovery networkDiscovery;
     public GameObject vrPlayer;
     public GameObject mobilePlayer;
+
+    public enum PlayerType {VrPlayerType, MobilePlayerType};
+    //subclass for sending network messages
+    public class PlayerTypeMessage : MessageBase
+    {
+        public PlayerType playerType;
+    }
+
+
     // Start is called before the first frame update
     public void StartHosting()
     {
@@ -34,7 +44,16 @@ public class CustomNetworkManager : NetworkManager
     // Client callbacks
     public override void OnClientConnect(NetworkConnection conn)
     {
-        base.OnClientConnect(conn);
+        PlayerTypeMessage playerTypeMessage = new PlayerTypeMessage();
+        if (XRDevice.isPresent){
+            playerTypeMessage.playerType = PlayerType.VrPlayerType;
+            Debug.Log("ZZZ VR");
+        } else {
+            Debug.Log("ZZZ mobile");
+            playerTypeMessage.playerType = PlayerType.MobilePlayerType;
+        }
+        Debug.Log("ZZZ OnClientConnect adding player");
+        ClientScene.AddPlayer(conn, 0, playerTypeMessage);
         Debug.Log("Connected successfully to server, now to set up other stuff for the client...");
     }
 
@@ -44,13 +63,21 @@ public class CustomNetworkManager : NetworkManager
         Debug.Log("A client connected to the server: " + conn);
     }
 
-    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
-        if (XRDevice.isPresent){
-            NetworkServer.AddPlayerForConnection(conn, vrPlayer, playerControllerId);
-        } else{
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader){
+        Debug.Log("ZZZ OnServerAddPlayer adding player");
+        PlayerTypeMessage playerTypeMessage = extraMessageReader.ReadMessage<PlayerTypeMessage>();
+        PlayerType playerType = playerTypeMessage.playerType;
+        Debug.Log(String.Format("ZZZ {0:G}", playerType));
+        if (playerType == PlayerType.VrPlayerType){
+            var player = (GameObject)GameObject.Instantiate(vrPlayer, Vector3.zero, Quaternion.identity);
+            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+        } else if(playerType == PlayerType.MobilePlayerType){
             var player = (GameObject)GameObject.Instantiate(mobilePlayer, Vector3.zero, Quaternion.identity);
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
+    }
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId){
+        Debug.Log("ZZZ penis");
     }
 
 
