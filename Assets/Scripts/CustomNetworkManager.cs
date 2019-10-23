@@ -69,7 +69,7 @@ public class CustomNetworkManager : NetworkManager
         {
             mobileNetworkUi.SetActive(true);
         }
-        
+
         base.OnClientDisconnect(conn);
     }
 

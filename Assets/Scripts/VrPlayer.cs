@@ -6,23 +6,34 @@ using UnityEngine.Networking;
 
 public class VrPlayer : NetworkBehaviour
 {
-    GameObject camera;
+    GameObject localLeftHand;
+    GameObject leftHand;
+    public GameObject leftHandPrefab;
 
     void Start(){
-        Debug.Log("ZZZ starting VrPlayer");
-    }
-
-    public override void OnStartLocalPlayer(){
-        camera = GameObject.Find("CustomHandLeft");
-        gameObject.transform.position = camera.transform.position;
-    }
-    public void Update(){
-        if(isLocalPlayer){
-            gameObject.transform.position = camera.transform.position;
+        localLeftHand = GameObject.Find("CustomHandLeft");
+        if (isLocalPlayer){
+            CmdInstantiateHand();
         }
     }
 
-    public override void OnStartClient(){
+    [Command]
+    void CmdInstantiateHand(){
+        leftHand = (GameObject)GameObject.Instantiate(leftHandPrefab);
+        NetworkServer.Spawn(leftHand);
+    }
+
+    public void Update(){
+        if(!isLocalPlayer){
+            return;
+        }
+        CmdUpdatePosition(localLeftHand.transform.position, localLeftHand.transform.rotation);
+    }
+
+    [Command]
+    public void CmdUpdatePosition(Vector3 position, Quaternion rotation){
+        leftHand.transform.position = position;
+        leftHand.transform.rotation = rotation;
     }
 }
 

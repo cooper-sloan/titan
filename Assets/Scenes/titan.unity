@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 219669949}
-  m_IndirectSpecularColor: {r: 0.01515086, g: 0.04060921, b: 0.03152868, a: 1}
+  m_IndirectSpecularColor: {r: 0.017265085, g: 0.037189834, b: 0.03553985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1661,6 +1661,7 @@ MonoBehaviour:
   m_SpawnPrefabs:
   - {fileID: 480714991757769427, guid: 6deb121dd021e42f0a46feb714b3c3f7, type: 3}
   - {fileID: 2383931620573860984, guid: 162be7f2d0a0349629fc16e8574a8156, type: 3}
+  - {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac, type: 3}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -1717,7 +1718,8 @@ MonoBehaviour:
   isNetworkActive: 0
   matchMaker: {fileID: 0}
   networkDiscovery: {fileID: 1529210356}
-  vrPlayer: {fileID: 411433794}
+  vrPlayer: {fileID: 2383931620573860984, guid: 162be7f2d0a0349629fc16e8574a8156,
+    type: 3}
   mobilePlayer: {fileID: 480714991757769427, guid: 6deb121dd021e42f0a46feb714b3c3f7,
     type: 3}
   mobileNetworkUi: {fileID: 366837814}

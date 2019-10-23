@@ -16,13 +16,13 @@ public class MobilePlayer : NetworkBehaviour
     public float cameraStartHeight = 1f;
     public float cameraStartDistance = -2f;
 
-    
+
     private Vector3 cameraOffsetX;
     private Vector3 cameraOffsetY;
 
     void Start(){
         Debug.Log("ZZZ starting MobilePlayer");
-        
+
         cameraOffsetX = new Vector3(0, cameraStartHeight, cameraStartDistance);
         cameraOffsetY = new Vector3(0, 0, cameraStartDistance);
     }
@@ -57,7 +57,7 @@ public class MobilePlayer : NetworkBehaviour
         gameObject.transform.Translate(movementDirection * movementSpeed * Time.deltaTime);
     }
 
-    // 
+    //
     /// <summary>
     ///  RotateCamera can be used to rotate the mobile player's camera relative to the player
     /// </summary>
@@ -68,9 +68,8 @@ public class MobilePlayer : NetworkBehaviour
         if (localCamera.active)
         {
 
-            
+
             Debug.Log("ZZZ camera is active");
-            Debug.Log(eulerAngles);
             cameraOffsetX = Quaternion.AngleAxis(eulerAngles.x * cameraRotationSpeed, Vector3.up) * cameraOffsetX;
             cameraOffsetY = Quaternion.AngleAxis(eulerAngles.y * cameraRotationSpeed, Vector3.right) * cameraOffsetY;
             localCamera.transform.position = transform.position + cameraOffsetX + cameraOffsetY;
@@ -80,7 +79,7 @@ public class MobilePlayer : NetworkBehaviour
         {
             Debug.Log("ZZZ camera is not active");
         }
-        
+
 
     }
 
@@ -94,7 +93,7 @@ public class MobilePlayer : NetworkBehaviour
         CmdMove((Input.GetAxis("Vertical") * transform.forward) + (Input.GetAxis("Horizontal") * transform.right));
         RotateCamera(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
 #elif UNITY_IOS || UNITY_ANDROID
-        
+
         CmdMove(new Vector3(joystick.Horizontal,0,joystick.Vertical));
 #endif
     }

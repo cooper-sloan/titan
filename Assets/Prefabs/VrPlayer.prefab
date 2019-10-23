@@ -69,7 +69,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &8690911083285159861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232042439c3eb4d058b8b9c6a5b0aba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHandPrefab: {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac,
+    type: 3}
 --- !u!33 &4564489188616620223
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -174,3 +176,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232042439c3eb4d058b8b9c6a5b0aba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHandPrefab: {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac,
+    type: 3}
