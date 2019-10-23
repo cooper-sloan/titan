@@ -10,6 +10,7 @@ public class CustomNetworkManager : NetworkManager
     public CustomNetworkDiscovery networkDiscovery;
     public GameObject vrPlayer;
     public GameObject mobilePlayer;
+    public GameObject mobileNetworkUi;
 
     public enum PlayerType {VrPlayerType, MobilePlayerType};
     //subclass for sending network messages
@@ -54,7 +55,22 @@ public class CustomNetworkManager : NetworkManager
         }
         Debug.Log("ZZZ OnClientConnect adding player");
         ClientScene.AddPlayer(conn, 0, playerTypeMessage);
+        mobileNetworkUi.SetActive(false);
         Debug.Log("Connected successfully to server, now to set up other stuff for the client...");
+    }
+
+    public override void OnClientDisconnect(NetworkConnection conn)
+    {
+        if (XRDevice.isPresent)
+        {
+           // TODO: show vr lobby ui
+        }
+        else
+        {
+            mobileNetworkUi.SetActive(true);
+        }
+        
+        base.OnClientDisconnect(conn);
     }
 
     // Server callbacks
