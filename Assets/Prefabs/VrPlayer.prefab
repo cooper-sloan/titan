@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4564489188616620223}
   - component: {fileID: 14943594513773678}
   - component: {fileID: 7881098463231611072}
-  - component: {fileID: 114645776081175828}
   m_Layer: 0
   m_Name: VrPlayer
   m_TagString: Untagged
@@ -164,17 +163,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 1, z: 1.0000004}
   m_Center: {x: 0.00000008940697, y: 0, z: 0.00000023841856}
---- !u!114 &114645776081175828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383931620573860984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232042439c3eb4d058b8b9c6a5b0aba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHandPrefab: {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac,
-    type: 3}
