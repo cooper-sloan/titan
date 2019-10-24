@@ -19,8 +19,12 @@ public class VrPlayer : NetworkBehaviour
 
     [Command]
     void CmdInstantiateHand(){
-        leftHand = (GameObject)GameObject.Instantiate(leftHandPrefab);
-        NetworkServer.Spawn(leftHand);
+        Debug.Log("ZZZ running instantiate");
+        if (isServer){
+            Debug.Log("ZZZ server");
+            leftHand = (GameObject)GameObject.Instantiate(leftHandPrefab);
+            NetworkServer.Spawn(leftHand);
+        }
     }
 
     public void Update(){

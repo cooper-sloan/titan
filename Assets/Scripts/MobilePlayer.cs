@@ -20,13 +20,6 @@ public class MobilePlayer : NetworkBehaviour
     private Vector3 cameraOffsetX;
     private Vector3 cameraOffsetY;
 
-    void Start(){
-        Debug.Log("ZZZ starting MobilePlayer");
-
-        cameraOffsetX = new Vector3(0, cameraStartHeight, cameraStartDistance);
-        cameraOffsetY = new Vector3(0, 0, cameraStartDistance);
-    }
-
     public override void OnStartLocalPlayer(){
         Debug.Log("ZZZ Added mobile player.");
         GameObject.Find("MobileMenuCamera").SetActive(false);

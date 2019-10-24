@@ -23,7 +23,7 @@ public class CustomNetworkManager : NetworkManager
     // Start is called before the first frame update
     public void StartHosting()
     {
-        Debug.Log("Start hosting!");
+        Debug.Log("ZZZ Start hosting!");
         networkDiscovery.Initialize();
         networkDiscovery.StartAsServer();
         base.StartHost();
@@ -31,14 +31,14 @@ public class CustomNetworkManager : NetworkManager
 
     public void StartClientConnection()
     {
-        Debug.Log("Start client!");
+        Debug.Log("ZZZ Start client!");
         networkDiscovery.Initialize();
         networkDiscovery.StartAsClient();
     }
 
     public void StartServerOnly()
     {
-        Debug.Log("Start server!");
+        Debug.Log("ZZZ Start server!");
         base.StartServer();
     }
 
@@ -58,6 +58,10 @@ public class CustomNetworkManager : NetworkManager
         mobileNetworkUi.SetActive(false);
         Debug.Log("Connected successfully to server, now to set up other stuff for the client...");
     }
+    public override void OnStartServer(){
+        Debug.Log("ZZZ OnServerStart");
+    }
+
 
     public override void OnClientDisconnect(NetworkConnection conn)
     {
@@ -76,7 +80,7 @@ public class CustomNetworkManager : NetworkManager
     // Server callbacks
     public override void OnServerConnect(NetworkConnection conn)
     {
-        Debug.Log("A client connected to the server: " + conn);
+        Debug.Log("ZZZ A client connected to the server: " + conn);
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader){
