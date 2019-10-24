@@ -21,8 +21,8 @@ public class Master : MonoBehaviour
     }
     void Start(){
         if (XRDevice.isPresent){
-            networkManager.StartClientConnection();
-        }
+            networkManager.StartHosting();
+       }
     }
 }
 
