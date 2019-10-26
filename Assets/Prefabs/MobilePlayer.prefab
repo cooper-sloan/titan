@@ -233,7 +233,7 @@ MonoBehaviour:
   localCamera: {fileID: 5620252883596804117}
   joystickCanvas: {fileID: 5557743539542771099}
   joystick: {fileID: 2165533090555373687}
-  movementSpeed: 0.2
+  movementSpeed: 5
   cameraRotationSpeed: 2
   cameraStartHeight: 1
   cameraStartDistance: -2

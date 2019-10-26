@@ -11,7 +11,7 @@ public class MobilePlayer : NetworkBehaviour
     public Joystick joystick;
 
 
-    public float movementSpeed = 1.0f;
+    public float movementSpeed = 5.0f;
     public float cameraRotationSpeed = 2f;
     public float cameraStartHeight = 1f;
     public float cameraStartDistance = -2f;
