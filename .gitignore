@@ -11,6 +11,10 @@
 /[Mm]emoryCaptures/
 /titan
 
+# ignore mac ds_store
+.DS_Store
+Assets/.DS_Store
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
