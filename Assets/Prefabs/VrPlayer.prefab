@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHandPrefab: {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac,
     type: 3}
+  lightningPrefab: {fileID: 429939263667154277, guid: c3684dcae6e484787951e7995d09ea18,
+    type: 3}
 --- !u!33 &4564489188616620223
 MeshFilter:
   m_ObjectHideFlags: 0
