@@ -48,7 +48,7 @@ public class VrPlayer : NetworkBehaviour
             lightningBolt.transform.position = position;
             lightningBolt.transform.rotation = rotation;
         }
-       
+
     }
 
     [Command]

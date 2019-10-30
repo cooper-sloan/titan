@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Explosion : MonoBehaviour
 {
-    public Transform explosionPrefab;
+    public GameObject explosionPrefab;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -12,7 +13,8 @@ public class Explosion : MonoBehaviour
         if (collision.gameObject.GetComponent<Destructable>() != null){
             Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
             Vector3 pos = contact.point;
-            Instantiate(explosionPrefab, pos, rot);
+            GameObject explosion = Instantiate(explosionPrefab, pos, rot);
+            NetworkServer.Spawn(explosion);
             Destroy(gameObject);
         }
     }
