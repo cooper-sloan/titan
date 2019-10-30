@@ -720,10 +720,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: c43d4795-2123-4c61-a73e-085f8ec07698
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: titan
-  organizationId: dlazares
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
