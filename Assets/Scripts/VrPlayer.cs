@@ -43,8 +43,12 @@ public class VrPlayer : NetworkBehaviour
     [ClientRpc]
     void RpcUpdateLightningPosition(GameObject lightningBolt, Vector3 position, Quaternion rotation)
     {
-        lightningBolt.transform.position = position;
-        lightningBolt.transform.rotation = rotation;
+        if (!isLocalPlayer)
+        {
+            lightningBolt.transform.position = position;
+            lightningBolt.transform.rotation = rotation;
+        }
+       
     }
 
     [Command]
