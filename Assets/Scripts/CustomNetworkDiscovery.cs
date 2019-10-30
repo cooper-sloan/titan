@@ -4,11 +4,13 @@ using System.Collections;
 
 public class CustomNetworkDiscovery : NetworkDiscovery
 {
+    NetworkManager manager;
     public override void OnReceivedBroadcast(string fromAddress, string data)
     {
+        NetworkManager manager = GetComponent<NetworkManager>();
         Debug.Log("ZZZ On recieved broadcast with address");
-        NetworkManager.singleton.networkAddress = fromAddress;
+        manager.networkAddress = fromAddress;
         StopBroadcast();
-        NetworkManager.singleton.StartClient();
+        manager.StartClient();
     }
 }

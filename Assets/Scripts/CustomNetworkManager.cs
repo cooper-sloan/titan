@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine.XR;
 
 public class CustomNetworkManager : NetworkManager
@@ -48,10 +48,12 @@ public class CustomNetworkManager : NetworkManager
         } else {
             playerTypeMessage.playerType = PlayerType.MobilePlayerType;
         }
-        ClientScene.AddPlayer(conn, 0, playerTypeMessage);
+        conn.Send(playerTypeMessage);
         mobileNetworkUi.SetActive(false);
     }
     public override void OnStartServer(){
+        //base.OnStartServer();
+        NetworkServer.RegisterHandler<PlayerTypeMessage>(OnCreateCharacter);
     }
 
 
@@ -75,15 +77,14 @@ public class CustomNetworkManager : NetworkManager
         Debug.Log("ZZZ A client connected to the server: " + conn);
     }
 
-    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader){
-        PlayerTypeMessage playerTypeMessage = extraMessageReader.ReadMessage<PlayerTypeMessage>();
+    public void OnCreateCharacter(NetworkConnection conn, PlayerTypeMessage playerTypeMessage){
         PlayerType playerType = playerTypeMessage.playerType;
         if (playerType == PlayerType.VrPlayerType){
             var player = (GameObject)GameObject.Instantiate(vrPlayer, Vector3.zero, Quaternion.identity);
-            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+            NetworkServer.AddPlayerForConnection(conn, player);
         } else if(playerType == PlayerType.MobilePlayerType){
             var player = (GameObject)GameObject.Instantiate(mobilePlayer, Vector3.zero, Quaternion.identity);
-            NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+            NetworkServer.AddPlayerForConnection(conn, player);
         }
     }
 

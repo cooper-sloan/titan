@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.Networking;
+using Mirror;
 
 public class MobilePlayer : NetworkBehaviour
 {
@@ -60,8 +60,6 @@ public class MobilePlayer : NetworkBehaviour
     {
         if (localCamera.active)
         {
-
-
             Debug.Log("ZZZ camera is active");
             cameraOffsetX = Quaternion.AngleAxis(eulerAngles.x * cameraRotationSpeed, Vector3.up) * cameraOffsetX;
             cameraOffsetY = Quaternion.AngleAxis(eulerAngles.y * cameraRotationSpeed, Vector3.right) * cameraOffsetY;

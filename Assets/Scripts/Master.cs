@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.Networking;
+using Mirror;
 public class Master : MonoBehaviour
 {
     public CustomNetworkManager networkManager;

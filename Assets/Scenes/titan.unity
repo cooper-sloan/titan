@@ -124,6 +124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2669962119
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,6 +497,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 4121203362
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -588,6 +608,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 3813953186
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -674,30 +704,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 411433794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 734b48bea0b204338958ee3d885e11f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 239
-    i1: 226
-    i2: 102
-    i3: 83
-    i4: 138
-    i5: 141
-    i6: 205
-    i7: 164
-    i8: 219
-    i9: 208
-    i10: 79
-    i11: 191
-    i12: 247
-    i13: 153
-    i14: 112
-    i15: 83
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  syncMode: 0
+  syncInterval: 0.1
+  compressRotation: 1
+  target: {fileID: 0}
 --- !u!114 &411433797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,17 +720,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 411433794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 1843449441}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
+  syncMode: 0
+  syncInterval: 0.1
+  compressRotation: 1
 --- !u!114 &411433798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,19 +735,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 411433794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  serverOnly: 0
+  localPlayerAuthority: 0
+  m_AssetId: efe266538a8dcda4dbd04fbff7997053
+  m_SceneId: 182319072
 --- !u!1001 &486447747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -825,6 +827,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lightning_bolt (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 3543846970
       objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
@@ -1019,6 +1031,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lightning_bolt (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 556741546
       objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
@@ -1309,6 +1331,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2194448028
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1410,6 +1442,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lightning_bolt (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2323714881
       objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
@@ -1557,6 +1599,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2997702093
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1625,6 +1677,7 @@ GameObject:
   - component: {fileID: 1529210355}
   - component: {fileID: 1529210354}
   - component: {fileID: 1529210356}
+  - component: {fileID: 1529210357}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -1644,80 +1697,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03639a03f81a458db8699a49fc325ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NetworkPort: 7777
-  m_ServerBindToIP: 0
-  m_ServerBindAddress: 
-  m_NetworkAddress: daserver.local
-  m_DontDestroyOnLoad: 1
-  m_RunInBackground: 1
-  m_ScriptCRCCheck: 1
-  m_MaxDelay: 0.01
-  m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 0}
-  m_AutoCreatePlayer: 0
-  m_PlayerSpawnMethod: 0
-  m_OfflineScene: 
-  m_OnlineScene: 
-  m_SpawnPrefabs:
-  - {fileID: 480714991757769427, guid: 6deb121dd021e42f0a46feb714b3c3f7, type: 3}
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  startOnHeadless: 1
+  serverTickRate: 30
+  showDebugMessages: 0
+  offlineScene: 
+  onlineScene: 
+  transport: {fileID: 1529210357}
+  networkAddress: localhost
+  maxConnections: 4
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 0
+  spawnPrefabs:
   - {fileID: 2383931620573860984, guid: 162be7f2d0a0349629fc16e8574a8156, type: 3}
-  - {fileID: 304673352066745628, guid: 1f616530ce6a143aabca26eebd5490ac, type: 3}
-  - {fileID: 429939263667154277, guid: c3684dcae6e484787951e7995d09ea18, type: 3}
-  m_CustomConfig: 0
-  m_MaxConnections: 4
-  m_ConnectionConfig:
-    m_PacketSize: 1440
-    m_FragmentSize: 500
-    m_ResendTimeout: 1200
-    m_DisconnectTimeout: 2000
-    m_ConnectTimeout: 2000
-    m_MinUpdateTimeout: 10
-    m_PingTimeout: 500
-    m_ReducedPingTimeout: 100
-    m_AllCostTimeout: 20
-    m_NetworkDropThreshold: 5
-    m_OverflowDropThreshold: 5
-    m_MaxConnectionAttempt: 10
-    m_AckDelay: 33
-    m_SendDelay: 10
-    m_MaxCombinedReliableMessageSize: 100
-    m_MaxCombinedReliableMessageCount: 10
-    m_MaxSentMessageQueueSize: 512
-    m_AcksType: 1
-    m_UsePlatformSpecificProtocols: 0
-    m_InitialBandwidth: 0
-    m_BandwidthPeakFactor: 2
-    m_WebSocketReceiveBufferMaxSize: 0
-    m_UdpSocketReceiveBufferMaxSize: 0
-    m_SSLCertFilePath: 
-    m_SSLPrivateKeyFilePath: 
-    m_SSLCAFilePath: 
-    m_Channels: []
-  m_GlobalConfig:
-    m_ThreadAwakeTimeout: 1
-    m_ReactorModel: 0
-    m_ReactorMaximumReceivedMessages: 1024
-    m_ReactorMaximumSentMessages: 1024
-    m_MaxPacketSize: 2000
-    m_MaxHosts: 16
-    m_ThreadPoolSize: 1
-    m_MinTimerTimeout: 1
-    m_MaxTimerTimeout: 12000
-    m_MinNetSimulatorTimeout: 1
-    m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 0500000000000000
-  m_UseWebSockets: 0
-  m_UseSimulator: 0
-  m_SimulatedLatency: 1
-  m_PacketLossPercentage: 0
-  m_MaxBufferedPackets: 16
-  m_AllowFragmentation: 1
-  m_MatchHost: mm.unet.unity3d.com
-  m_MatchPort: 443
-  matchName: default
-  matchSize: 4
-  isNetworkActive: 0
-  matchMaker: {fileID: 0}
+  - {fileID: 480714991757769427, guid: 6deb121dd021e42f0a46feb714b3c3f7, type: 3}
   networkDiscovery: {fileID: 1529210356}
   vrPlayer: {fileID: 2383931620573860984, guid: 162be7f2d0a0349629fc16e8574a8156,
     type: 3}
@@ -1760,6 +1756,46 @@ MonoBehaviour:
   m_ShowGUI: 0
   m_OffsetX: 0
   m_OffsetY: 0
+--- !u!114 &1529210357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529210353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClientConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientError:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerDataReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerError:
+    m_PersistentCalls:
+      m_Calls: []
+  OnServerDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+  port: 7777
+  NoDelay: 1
+  serverMaxMessageSize: 16384
+  clientMaxMessageSize: 16384
 --- !u!1 &1582653412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1922,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 3330066598
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1943,12 +1989,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3684dcae6e484787951e7995d09ea18, type: 3}
---- !u!4 &1843449441 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3910521268935776690, guid: efe266538a8dcda4dbd04fbff7997053,
-    type: 3}
-  m_PrefabInstance: {fileID: 486447747}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884511239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2110,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: lightning_bolt (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2208479960
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2138,6 +2188,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lightning_bolt (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 2142877153
       objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
@@ -2589,10 +2649,84 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i0
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i1
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i2
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i3
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i4
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i5
+      value: 228
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i6
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i7
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i8
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i9
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i10
+      value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i11
+      value: 153
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i12
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i13
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i14
+      value: 234
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AssetId.i15
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 429939263667154277, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
       propertyPath: m_Name
       value: lightning_bolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_AssetId
+      value: c3684dcae6e484787951e7995d09ea18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462018512629512, guid: c3684dcae6e484787951e7995d09ea18,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 731530925
       objectReference: {fileID: 0}
     - target: {fileID: 429939263666663749, guid: c3684dcae6e484787951e7995d09ea18,
         type: 3}
@@ -2648,86 +2782,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i0
-      value: 195
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i1
-      value: 104
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i2
-      value: 77
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i3
-      value: 202
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i4
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i5
-      value: 228
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i6
-      value: 132
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i7
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i8
-      value: 121
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i9
-      value: 81
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i10
-      value: 231
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i11
-      value: 153
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i12
-      value: 93
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i13
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i14
-      value: 234
-      objectReference: {fileID: 0}
-    - target: {fileID: 429939263161057701, guid: c3684dcae6e484787951e7995d09ea18,
-        type: 3}
-      propertyPath: m_AssetId.i15
-      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3684dcae6e484787951e7995d09ea18, type: 3}
