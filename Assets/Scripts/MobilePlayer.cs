@@ -47,7 +47,9 @@ public class MobilePlayer : NetworkBehaviour
     [Command]
     void CmdMove(Vector3 movementDirection)
     {
-        gameObject.transform.Translate(movementDirection * movementSpeed * Time.deltaTime);
+        Debug.LogFormat("movementDirection: {0}",movementDirection.ToString());
+        gameObject.transform.position += movementDirection * movementSpeed * Time.deltaTime;
+        gameObject.transform.LookAt(gameObject.transform.position + movementDirection);
     }
 
     //
@@ -83,7 +85,7 @@ public class MobilePlayer : NetworkBehaviour
 
 #if UNITY_EDITOR
 
-        CmdMove((Input.GetAxis("Vertical") * transform.forward) + (Input.GetAxis("Horizontal") * transform.right));
+        CmdMove((Input.GetAxis("Vertical") * Vector3.forward) + (Input.GetAxis("Horizontal") * Vector3.right));
         RotateCamera(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
 #elif UNITY_IOS || UNITY_ANDROID
 
