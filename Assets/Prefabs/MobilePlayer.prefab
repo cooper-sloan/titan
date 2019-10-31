@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab57cc66b201423aa2c8f81d4ae11d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRunning: 0
+  animator: {fileID: 675342851193790825}
   localCamera: {fileID: 5620252883596804117}
   joystickCanvas: {fileID: 5557743539542771099}
   joystick: {fileID: 2165533090555373687}
@@ -450,6 +452,12 @@ GameObject:
 --- !u!4 &675342851203632855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1794589022361191800, guid: a37f33a7abc1c445990114c51fdf0eb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1277022881941818287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &675342851193790825 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1794589022353451718, guid: a37f33a7abc1c445990114c51fdf0eb7,
     type: 3}
   m_PrefabInstance: {fileID: 1277022881941818287}
   m_PrefabAsset: {fileID: 0}

@@ -6,6 +6,11 @@ using UnityEngine.Networking;
 
 public class MobilePlayer : NetworkBehaviour
 {
+    [SyncVar]
+    public bool isRunning;
+
+    public Animator animator;
+
     public GameObject localCamera;
     public GameObject joystickCanvas;
     public Joystick joystick;
@@ -82,6 +87,11 @@ public class MobilePlayer : NetworkBehaviour
     {
         if (!isLocalPlayer)
             return;
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f){
+            animator.SetBool("IsRunning", true);
+        }else{
+            animator.SetBool("IsRunning", false);
+        }
 
 #if UNITY_EDITOR
 
