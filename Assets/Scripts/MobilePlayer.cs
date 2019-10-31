@@ -52,7 +52,6 @@ public class MobilePlayer : NetworkBehaviour
     [Command]
     void CmdMove(Vector3 movementDirection)
     {
-        Debug.LogFormat("movementDirection: {0}",movementDirection.ToString());
         gameObject.transform.position += movementDirection * movementSpeed * Time.deltaTime;
         gameObject.transform.LookAt(gameObject.transform.position + movementDirection);
     }
@@ -83,24 +82,28 @@ public class MobilePlayer : NetworkBehaviour
 
     }
 
+    [Command]
+    void CmdSetRunning(bool isRunningIn){
+        isRunning = isRunningIn;
+    }
+
     void Update()
     {
-        if (!isLocalPlayer)
-            return;
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f){
-            animator.SetBool("IsRunning", true);
-        }else{
-            animator.SetBool("IsRunning", false);
-        }
+        if (isLocalPlayer){
+            if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f){
+                CmdSetRunning(true);
+            }else{
+                CmdSetRunning(false);
+            }
 
 #if UNITY_EDITOR
-
-        CmdMove((Input.GetAxis("Vertical") * Vector3.forward) + (Input.GetAxis("Horizontal") * Vector3.right));
-        RotateCamera(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
+            CmdMove((Input.GetAxis("Vertical") * Vector3.forward) + (Input.GetAxis("Horizontal") * Vector3.right));
+            RotateCamera(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
 #elif UNITY_IOS || UNITY_ANDROID
-
-        CmdMove(new Vector3(joystick.Horizontal,0,joystick.Vertical));
+            CmdMove(new Vector3(joystick.Horizontal,0,joystick.Vertical));
 #endif
+        }
+        animator.SetBool("IsRunning", isRunning);
     }
 }
 
