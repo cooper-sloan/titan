@@ -11,6 +11,7 @@ public class CustomNetworkManager : NetworkManager
     public GameObject vrPlayer;
     public GameObject mobilePlayer;
     public GameObject mobileNetworkUi;
+    public GameObject blueSpawnPoint;
 
     public enum PlayerType {VrPlayerType, MobilePlayerType};
     //subclass for sending network messages
@@ -82,7 +83,7 @@ public class CustomNetworkManager : NetworkManager
             var player = (GameObject)GameObject.Instantiate(vrPlayer, Vector3.zero, Quaternion.identity);
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         } else if(playerType == PlayerType.MobilePlayerType){
-            var player = (GameObject)GameObject.Instantiate(mobilePlayer, Vector3.zero, Quaternion.identity);
+            var player = (GameObject)GameObject.Instantiate(mobilePlayer, blueSpawnPoint.transform.position, Quaternion.identity);
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }
     }

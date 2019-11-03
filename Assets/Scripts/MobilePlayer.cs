@@ -8,6 +8,14 @@ public class MobilePlayer : NetworkBehaviour
 {
     [SyncVar]
     public bool isRunning;
+    [SyncVar]
+    public float health = 100f;
+
+    public const float maxHealth = 100f;
+
+    
+    GameObject blueSpawnPoint;
+
 
     public Animator animator;
 
@@ -25,9 +33,15 @@ public class MobilePlayer : NetworkBehaviour
     private Vector3 cameraOffsetX;
     private Vector3 cameraOffsetY;
 
+    private void Start()
+    {
+        blueSpawnPoint = GameObject.Find("BlueSpawn");
+    }
+
     public override void OnStartLocalPlayer(){
         Debug.Log("ZZZ Added mobile player.");
         GameObject.Find("MobileMenuCamera").SetActive(false);
+        
         localCamera.SetActive(true);
 
         #if !UNITY_EDITOR && (UNITY_IOS || UNITY_ANDROID)
@@ -87,16 +101,44 @@ public class MobilePlayer : NetworkBehaviour
         isRunning = isRunningIn;
     }
 
+   
+
+    public void TakeDamage(float amount)
+    {
+        Debug.LogFormat("ZZZ MobilePlayer take damage {0} to {1}. isServer {2}, isClient {3}, isLocalPlayer {4}, hasAuthority {5}",
+            amount.ToString(), gameObject.name.ToString(),isServer,isClient,isLocalPlayer,hasAuthority);
+        if (!isServer)
+            return;
+
+        health -= amount;
+        if (health <= 0)
+        {
+            health = maxHealth;
+
+            // called on the Server, but invoked on the Clients
+            Respawn();
+        }
+    }
+
+
+    
+    void Respawn()
+    {
+        transform.position = blueSpawnPoint.transform.position;
+    }
+
     void Update()
     {
         if (isLocalPlayer){
-            if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f){
+            if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f
+                || Mathf.Abs(joystick.Horizontal) > 0.0f || Mathf.Abs(joystick.Vertical) > 0.0f)
+            {
                 CmdSetRunning(true);
             }else{
                 CmdSetRunning(false);
             }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX
             CmdMove((Input.GetAxis("Vertical") * Vector3.forward) + (Input.GetAxis("Horizontal") * Vector3.right));
             RotateCamera(new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
 #elif UNITY_IOS || UNITY_ANDROID

@@ -36,6 +36,9 @@ public class VrPlayer : NetworkBehaviour
         if(!isLocalPlayer){
             return;
         }
+        if (lightningBolt == null){
+            CmdInstantiateLightning();
+        }
         CmdUpdatePosition(localLeftHand.transform.position, localLeftHand.transform.rotation);
         CmdUpdateLightningPosition(lightningBolt.transform.position, lightningBolt.transform.rotation); // Glitchy because OVRGrabber updates in FixedUpdate
     }

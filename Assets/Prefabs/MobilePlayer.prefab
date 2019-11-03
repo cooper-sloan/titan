@@ -78,6 +78,8 @@ GameObject:
   - component: {fileID: 114124823434010004}
   - component: {fileID: 114060142838526570}
   - component: {fileID: 3009804462920223122}
+  - component: {fileID: 114515099596796824}
+  - component: {fileID: 1363065433227484975}
   m_Layer: 0
   m_Name: MobilePlayer
   m_TagString: Untagged
@@ -171,21 +173,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRunning: 0
+  health: 100
   animator: {fileID: 675342851193790825}
   localCamera: {fileID: 5620252883596804117}
   joystickCanvas: {fileID: 5557743539542771099}
   joystick: {fileID: 2165533090555373687}
-  movementSpeed: 5
+  movementSpeed: 2.1
   cameraRotationSpeed: 2
   cameraStartHeight: 1
   cameraStartDistance: -2
---- !u!136 &5470476613851013762
+--- !u!114 &114515099596796824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480714991757769427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96314e614b4e24c9b98de31e69aac1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!136 &1363065433227484975
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675342851203142391}
+  m_GameObject: {fileID: 480714991757769427}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -443,12 +459,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a37f33a7abc1c445990114c51fdf0eb7, type: 3}
---- !u!1 &675342851203142391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1794589022360705368, guid: a37f33a7abc1c445990114c51fdf0eb7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1277022881941818287}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &675342851203632855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1794589022361191800, guid: a37f33a7abc1c445990114c51fdf0eb7,
