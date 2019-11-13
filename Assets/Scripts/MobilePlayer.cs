@@ -23,8 +23,10 @@ public class MobilePlayer : NetworkBehaviour
     public GameObject joystickCanvas;
     public Joystick joystick;
 
+    public GameObject heldObject;
 
-    public float movementSpeed = 5.0f;
+
+    public float movementSpeed = 15.0f;
     public float cameraRotationSpeed = 2f;
     public float cameraStartHeight = 1f;
     public float cameraStartDistance = -2f;
@@ -80,9 +82,6 @@ public class MobilePlayer : NetworkBehaviour
     {
         if (localCamera.active)
         {
-
-
-            Debug.Log("ZZZ camera is active");
             cameraOffsetX = Quaternion.AngleAxis(eulerAngles.x * cameraRotationSpeed, Vector3.up) * cameraOffsetX;
             cameraOffsetY = Quaternion.AngleAxis(eulerAngles.y * cameraRotationSpeed, Vector3.right) * cameraOffsetY;
             localCamera.transform.position = transform.position + cameraOffsetX + cameraOffsetY;
@@ -120,6 +119,30 @@ public class MobilePlayer : NetworkBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("YYY OnCollisionEnter");
+        ContactPoint contact = collision.contacts[0];
+        Debug.LogFormat("ZZZ oncollisionenter {0}",collision.gameObject.name);
+        Destructable destructable = collision.gameObject.GetComponent<Destructable>();
+        Holdable holdable = collision.gameObject.GetComponent<Holdable>();
+        if ( holdable != null){
+            holdable.PickUp(gameObject);
+            heldObject = holdable.gameObject;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Golden Shower");
+        if (heldObject != null){
+            heldObject.GetComponent<Holdable>().ResetPosition();
+            heldObject = null;
+        }
+    }
+
+
+
 
     
     void Respawn()
@@ -129,6 +152,7 @@ public class MobilePlayer : NetworkBehaviour
 
     void Update()
     {
+
         if (isLocalPlayer){
             if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.0f || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.0f
                 || Mathf.Abs(joystick.Horizontal) > 0.0f || Mathf.Abs(joystick.Vertical) > 0.0f)
