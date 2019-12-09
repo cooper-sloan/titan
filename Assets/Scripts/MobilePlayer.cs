@@ -65,7 +65,6 @@ public class MobilePlayer : NetworkBehaviour
     /// Note: This is a [Command] meaning the client tells the server to take this action.
     /// </summary>
     /// <param name="movementDirection"></param>
-    [Command]
     void CmdMove(Vector3 movementDirection)
     {
         gameObject.transform.position += movementDirection * movementSpeed * Time.deltaTime;
